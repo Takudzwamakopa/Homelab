@@ -6,7 +6,7 @@ This is a self-hosted cybersecurity homelab built to simulate offensive and defe
 
 ## 🔧 Project Evolution
 
-Originally, the lab started with **Security Onion** and a separate **Analyst VM** for packet analysis and dashboards. However, to gain more flexibility and transparency, I switched to **Wazuh**, which integrates seamlessly with **Elasticsearch** and **Kibana** to provide a modular SIEM platform for threat detection and analysis.
+Originally, the lab started with **Security Onion** and a separate **Analyst VM** for packet analysis and dashboards. However, to gain more flexibility and transparency, I switched to **HELK**, which integrates seamlessly with **Elasticsearch** and **Kibana** to provide a modular SIEM platform for threat detection and analysis.
 
 ---
 
@@ -21,11 +21,11 @@ Originally, the lab started with **Security Onion** and a separate **Analyst VM*
 ### Virtual Machines
 - Kali Linux (attacker) — Metasploit, Nmap, Netcat  
 - Metasploitable 2 (vulnerable target) — For exploitation practice  
-- Wazuh Server with Elasticsearch and Kibana — For detection and monitoring *(Note: Wazuh web interface setup is still under troubleshooting)*  
+- HELK Server with Elasticsearch and Kibana — For detection and monitoring 
 
 ### Network Topology
 - Adapter 1 (Host-only): Internal VM communication  
-- Adapter 2 (NAT): Internet access for Kali and Wazuh updates  
+- Adapter 2 (NAT): Internet access for Kali and HELK updates  
 - All traffic between attacker and target monitored by Wazuh  
 
 ---
@@ -38,7 +38,7 @@ Originally, the lab started with **Security Onion** and a separate **Analyst VM*
 - Netcat (reverse shell testing)  
 
 ### Defensive
-- Wazuh (SIEM agent and manager)  
+- HELK (SIEM agent and manager)  
 - Filebeat (log shipping to Elasticsearch)  
 - Elasticsearch + Kibana (search and visualization)  
 - Custom Bash scripts (connection monitoring)  
